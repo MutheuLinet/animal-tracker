@@ -48,7 +48,6 @@ public class EndangeredAnimal extends Animal {
         this.animalType = animalType;
     }
 
-
     public int getId() {
         return id;
     }

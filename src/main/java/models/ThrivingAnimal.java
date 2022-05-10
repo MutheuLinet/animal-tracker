@@ -36,6 +36,11 @@ public class ThrivingAnimal extends Animal{
         this.animalType = type;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     // overriding endangered animal
     @Override
     public boolean equals(Object otherThrivingAnimal) {
@@ -43,7 +48,8 @@ public class ThrivingAnimal extends Animal{
             ThrivingAnimal newThrivingAnimal = (ThrivingAnimal) otherThrivingAnimal;
             return (this.getAnimalName().equals(newThrivingAnimal.getAnimalName()));
         }
-
         return false;
+
     }
+
 }
