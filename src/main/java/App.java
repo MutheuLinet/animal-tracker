@@ -5,16 +5,31 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.Integer.parseInt;
 import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
+
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+
+        if (process.environment().get("PORT") != null) {
+            port = parseInt(process.environment().get("PORT"));
+        }else {
+            port = 4567;
+        }
+        port(port);
 
         staticFileLocation("/public");
 
         //home route
         get("/", (request, response) -> {
             return modelAndView( new HashMap<>(), "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/about", (request, response) -> {
+            return modelAndView( new HashMap<>(), "about.hbs");
         }, new HandlebarsTemplateEngine());
 
         //thriving animals form input route
@@ -84,6 +99,10 @@ public class App {
         //display list of sightings route
         get("/sightings", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            ThrivingAnimalDAO thrivingAnimalDAO = new ThrivingAnimalDAO();
+            model.put("animals", thrivingAnimalDAO.getThrivingAnimals());
+            EndangeredAnimalDAO endangeredAnimalDAO = new EndangeredAnimalDAO();
+            model.put("eAnimals", endangeredAnimalDAO.getEndangeredAnimals());
             model.put("sightings", Sightings.all());
             return modelAndView( model, "sightings.hbs");
         }, new HandlebarsTemplateEngine());
