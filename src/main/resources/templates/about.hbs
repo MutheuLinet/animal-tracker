@@ -8,14 +8,14 @@
                 crossorigin="anonymous"
         />
     </head>
-  <body
-    id="background"
-    style="
-      background-image: url(/images/G1.jpg);
+    <body
+            id="background"
+            style="
+      background-image: url(/images/lions.jpg);
       background-repeat: no-repeat;
       background-size: cover;
     "
-  >
+    >
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand text-warning" href="#">Wildlife ~ Tracker</a>
@@ -50,62 +50,19 @@
         </div>
     </nav>
 
-
-    {{/partial}}
+{{/partial}}
 
 {{#partial "content"}}
     <br> <br>
-    <div
-      style="
-        background-color: RGB(145, 134, 89, 0.7);
-        width: 60%;
-        margin-left: 20%;
-        padding: 10%;
-      "
-    >
-      <h2 style="color: #000000">List of Animals</h2>
-        <ol>
-
-        </ol>
-
-        <h6 style="color: #000000" >
-            <br>
-            <ol>
-                {{#each eAnimals}}
-                    <li> {{animalName}}
-                        <span style="color: #ff0000">
-                            {{health}}
-                        </span>
-                        {{age}}
-                        <span  style="color: #fff">
-                        {{animalType}}
-                    </span>
-                        <h6><a href="/animals/{{id}}/delete">Delete</a></h6>
-                    </li>
-
-
-                {{/each}}
-
-            </ol>
-        </h6>
-        <br />
-
-        <div class="d-inline-flex">
-            <form action="/thriving" >
-                <button  class="btn btn-dark btn-sm" type="submit">Add Thriving</button>
-            </form>
-            <form action="/endangered" >
-                <button  type="submit" class="btn btn-danger btn-sm">
-                    Add Endangered
-                </button>
-            </form>
-        </div>
-        <br />
-
+    <div style=" padding: 3%">
+        <h5 style="color: #fff">Wildlife Tracker allows you to track animals details such as whether they are healthy or sick,<br> their location in the wild and rangers in charge of them.
+        </h5>
+        <h5 style="color: #fff"> For further enquiries contact us at <span style="text-decoration: underline;">info@wildlifetracker.co.ke </span> </h5>
+        <h5 style="color: #fff">Lets care for our Wildlife!</h5>
     </div>
     <br />
-    {{/partial}}
+{{/partial}}
 {{#partial "footer"}}
-<br><br><br><br>
+    <br><br><br><br>
 {{/partial}}
 {{>layout.hbs}}
