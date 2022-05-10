@@ -14,7 +14,7 @@ class ThrivingAnimalTest {
 
     @Test
     public void exception_throwRuntimeExceptionForEmptyField_true(){
-        ThrivingAnimal giraffe = new ThrivingAnimal("");
+        ThrivingAnimal giraffe = new ThrivingAnimal("giraffe");
         assertEquals(true, giraffe instanceof ThrivingAnimal);
     }
     @Test
