@@ -10,5 +10,11 @@ CREATE TABLE animals(
     age VARCHAR
 );
 
+CREATE TABLE sightings (
+    id serial PRIMARY KEY,
+    animal_id int,
+    location varchar,
+    ranger varchar,
+    timestamp timestamp);
 
 CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
