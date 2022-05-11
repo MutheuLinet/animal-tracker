@@ -10,7 +10,8 @@ Linet Mutheu
 
 ### Description
 
-An application that allows Rangers to track wildlife sightings in the area.
+Wildlife tracker is a web application built using java and java-spark framework.
+The application allows Rangers to track wildlife sightings in the area.
 
 ### Prerequisites
 
