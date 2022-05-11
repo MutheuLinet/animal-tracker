@@ -13,7 +13,6 @@ public class Sightings implements SightingsManagement{
     private String ranger;
     private Timestamp timestamp;
 
-
     public Sightings(int animalId, String location, String ranger) {
         if (ranger.equals("")){
             throw new IllegalArgumentException("Please enter the Ranger's name");
